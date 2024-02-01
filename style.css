@@ -1,0 +1,7 @@
+#hero{
+    background-color: lightgreen;
+    color: sandybrown;
+}
+#add, #delete, #update{
+    display: inline-block;
+}
