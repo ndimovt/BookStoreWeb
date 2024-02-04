@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="delete">
+        <p><strong>Delete Record</strong></p>
+        <p><strong>This operation can't be undone!</strong></p>
+        <form>
+            <label for="deleteName">Enter Book You Want to Delete</label>
+            <br>
+            <input type="text" id="deleteName" placeholder="bookname"/>
+            <br><br>
+            <button onclick="deleteRecord()">Delete</button>
+        </form>
+    </div>
+    <script src="functions.js"></script>
+    
+</body>
+</html>

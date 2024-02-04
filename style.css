@@ -2,6 +2,19 @@
     background-color: lightgreen;
     color: sandybrown;
 }
-#add, #delete, #update{
+#add, #delete, #update, #allRecords, #byAuthor, #insert, #dataTable{
     display: inline-block;
+}
+#dataTable, #dataTable th, #dataTable td{
+    border: 5px;
+    border-style: groove;
+    text-align: center;
+    border-color:antiquewhite;
+}
+#button{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: blue;
+    color: antiquewhite;
 }

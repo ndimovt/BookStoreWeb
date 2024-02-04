@@ -3,45 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header id="hero"><h2 >Wellcome to bookstore</h2></header>
-    <div id="add">
-        <p> <strong>Insert Record</strong></p>
-        <form >
-            <label for="bname">Enter Book</label><br>
-            <input type="text" id="bname" placeholder="bookname"/>
-            <br><br>
-            <label for="aname">Enter Author Name</label><br>
-            <input type="text" id="aname" placeholder="authorname"/>
-            <br><br>
-            <label for="price">Enter Price</label><br>
-            <input type="number" step="any" id="price"  placeholder="price"/>
-            <br><br>
-            <button onclick="submitInfo()">Send</button>
-        </form>
-    </div>
-    <div id="delete">
-        <p><strong>Delete Record</strong></p>
-        <form>
-            <input type="text" id="deleteName" placeholder="bookname"/>
-            <br><br>
-            <button onclick="deleteRecord()">Delete</button>
-        </form>
+    <header id="hero"><h2 >Wellcome to bookstore!<br>Choose operation you want to perform!</h2></header>
+    
+    <div id="insert">
+        <button id="button" onclick="openAdd()">Add Book</button>
     </div>
     <div id="update">
-        <p><strong>Update Book Price</strong></p>
-        <form>
-            <label for="updRecord">Enter Book Name</label><br>
-            <input id="updRecord" type="text" placeholder="bookname">
-            <br><br>
-            <label for="newPrice">Enter New Price</label><br>
-            <input id="newPrice" type="number" step="any" placeholder="new price">
-            <br><br>
-            <button onclick="updateRecordByName()">Update</button>
-        </form>
+        <button id="button" onclick="openUpdate()">Update Price</button>
+    </div>
+    <div id="delete">
+        <button id="button" onclick="openDelete()">Delete</button>
+    </div>
+    <div id="allRecords">
+        <button id="button" onclick="getInfo()">Show All</button>
+    </div>
+    <div id="byAuthor"> 
+        <button id="button" onclick="specificSearch()">Search By Author Name</button>        
     </div>
     <script src="functions.js"></script>
 </body>
