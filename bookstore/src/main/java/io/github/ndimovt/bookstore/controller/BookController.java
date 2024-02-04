@@ -14,15 +14,15 @@ public class BookController {
     private BookService service;
     @PostMapping("/add")
     public Book add(@RequestBody Book book){
-        return service.addBook(book);
+        return service.add(book);
     }
     @GetMapping("/printAll")
     public List<Book> printAll(){
-        return service.getAllBooks();
+        return service.getAll();
     }
     @GetMapping("/find/{name}")
-    public Book find(@PathVariable String name){
-        return service.getBook(name);
+    public List<Book> find(@PathVariable String name){
+        return service.byAuthor(name);
     }
     @PutMapping("/updatePrice")
     public Book update(@RequestBody Book book){
