@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book, Integer> {
-    String deleteByBookName(String name);
+    String deleteById(int id);
     Book findByBookName(String bookName);
     List<Book> findByAuthorName(String authorName);
 

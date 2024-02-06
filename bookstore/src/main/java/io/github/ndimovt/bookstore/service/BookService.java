@@ -25,8 +25,8 @@ public class BookService {
         return sorted;
     }
     @Transactional
-    public String delete(String name){
-        repository.deleteByBookName(name);
+    public String delete(int id){
+        repository.deleteById(id);
         return "Product Deleted";
     }
     public List<Book> byAuthor(String name){
