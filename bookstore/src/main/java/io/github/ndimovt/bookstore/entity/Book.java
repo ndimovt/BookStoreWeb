@@ -19,6 +19,12 @@ public class Book {
     //@JsonProperty("bookPrice")
     private double price;   //if variable name is different then object property in js object(eg: js bookPrice, here price) it is req to have JsonProperty
 
+    public Book(String bookName, String authorName, double price) {
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.price = price;
+    }
+
     public Book() {
     }
 

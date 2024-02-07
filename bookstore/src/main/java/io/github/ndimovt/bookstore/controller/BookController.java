@@ -5,6 +5,7 @@ import io.github.ndimovt.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class BookController {
         return service.getAll();
     }
     @GetMapping("/find/{name}")
-    public List<Book> find(@PathVariable String name){
+    public ArrayList<Book> find(@PathVariable String name){
         return service.byAuthor(name);
     }
     @PutMapping("/updatePrice")

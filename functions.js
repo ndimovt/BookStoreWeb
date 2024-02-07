@@ -17,6 +17,7 @@ function submitInfo(){
     })
     .then(response => response.json())
     .then(data =>{console.log('Success', data);})
+
     .catch(error =>{ console.error("Error", error);});
     boname.value = "";
     auname.value = "";
@@ -24,11 +25,11 @@ function submitInfo(){
 }
 
 function updateRecordByName(){
-    var bookName = document.getElementById("updRecord").value;
+    var bName = document.getElementById("updRecord").value;
     var newPrice = document.getElementById("newPrice").value;
 
     var newData = {
-        bookName: bookName,
+        bookName: bName,
         price: newPrice
     };
 
@@ -40,8 +41,12 @@ function updateRecordByName(){
         body: JSON.stringify(newData),
     })
     .then(response => response.json())
-    .then(data => {console.log(data);})
+    .then(data => {console.log(data);
+    document.getElementById("updRecord").value = "";
+    document.getElementById("newPrice").value = "";})
     .catch(error => {console.log(error);});
+    bName.value ="";
+    newPrice.value = "";
 }
 
 function getInfo(){
@@ -89,7 +94,7 @@ function populateTable() {
     .then(response => response.json())
     .then(data => {
         const tableBody = document.querySelector("#dataTable tbody");
-        tableBody.innerHTML = ""; 
+        tableBody.innerHTML = "";
 
         data.forEach(item => {
             let row = tableBody.insertRow();
@@ -130,7 +135,7 @@ function populateTable() {
     .catch(error => console.error(error));
 }
 
-function findByName(){    
+function findByName(){
     let name = document.getElementById("specAuthor").value;
     fetch("http://localhost:8003/find/" + encodeURIComponent(name),{
         method: "GET",
@@ -141,7 +146,6 @@ function findByName(){
     .then(response => response.json())
     .then(data => {
         const table = document.querySelector("#dataTable tbody").innerHTML = "";
-        //table.innerHTML = "";
         data.forEach(item => {
             let row = table.insertRow();
             let cell1 = row.insertCell(0);

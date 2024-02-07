@@ -9,18 +9,21 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 @Service
 public class BookService {
     @Autowired
     private BookRepository repository;
-    public Book add(Book book){
-        return repository.save(book);
+    public Book add(Book book) {
+        ArrayList<Book> fullList = Populate.insert();
+        if (!fullList.contains(book)) {
+            return repository.save(book);
+        }
+        return null;
     }
-    public List<Book> getAll(){
+    public ArrayList<Book> getAll(){
         AuthorSort sort = new AuthorSort();
-        List<Book> sorted = repository.findAll();
+        ArrayList<Book> sorted = (ArrayList<Book>) repository.findAll();
         Collections.sort(sorted, sort);
         return sorted;
     }
@@ -29,7 +32,7 @@ public class BookService {
         repository.deleteById(id);
         return "Product Deleted";
     }
-    public List<Book> byAuthor(String name){
+    public ArrayList<Book> byAuthor(String name){
         return repository.findByAuthorName(name);
     }
     public Book updatePrice(Book book){
